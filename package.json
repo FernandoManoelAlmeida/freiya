@@ -12,7 +12,7 @@
     
     "build:git": "concurrently \"ng build --prod --base-href https://fernandomanoelalmeida.github.io/freya/ \" \"ngh\"",
     "build:prod": "ng build --prod",
-    "preinstall": "concurrently \"npm i -g @angular/cli\" \"npm i -g angular-cli-ghpages\""
+    "postinstall": "concurrently \"npm i -g @angular/cli\" \"npm i -g angular-cli-ghpages\""
   },
   "private": true,
   "dependencies": {

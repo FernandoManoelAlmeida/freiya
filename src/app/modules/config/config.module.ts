@@ -3,16 +3,16 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
-import { MODULE_ROUTES } from './dashboard.routes';
-import { HomeComponent } from './home/home.component';
+import { MODULE_ROUTES } from './config.routes';
+import { ConfigComponent } from './config.component';
 
 @NgModule({
   imports: [ 
       MODULE_ROUTES, 
-      MaterialModule, CommonModule 
+      MaterialModule, CommonModule
   ],
-  declarations: [ HomeComponent ]
+  declarations: [ ConfigComponent ]
 })
 
-export class DashboardModule{ }
+export class ConfigModule{ }
 

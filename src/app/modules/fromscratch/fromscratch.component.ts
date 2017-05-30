@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
     styleUrls: [ 'fromscratch.component.css' ],
 })
 
-export class FromscratchComponent { }
+export class FromscratchComponent {
+    name = 'Fernando Manoel de Almeida';
+}

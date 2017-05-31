@@ -11,10 +11,16 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '( ͡° ͜ʖ ͡°)';
-  user: Observable<firebase.User>;
+    title = '( ͡° ͜ʖ ͡°)';
+    user: Observable<firebase.User>;
 
     constructor(public afAuth: AngularFireAuth, private router: Router) {
         this.user = afAuth.authState;
+    }
+
+    logout() {
+        this.afAuth.auth.signOut();
+        this.router.navigate([ 'login' ]);
+        return;
     }
 }

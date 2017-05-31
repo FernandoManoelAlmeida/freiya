@@ -1,11 +1,12 @@
-<h1>
-  {{title}}
-</h1>
-
 <div>
-  <li><a href="#/dashboard/home">home</a></li>
-  <li><a href="#/fromscratch">fromscratch</a></li>
-  <li><a href="#/settings">settings</a></li>
+  <div *ngIf="(user | async)?.uid">
+    <h1>
+      {{title}}
+    </h1>
+    <li><a href="#/dashboard/home">home</a></li>
+    <li><a href="#/fromscratch">fromscratch</a></li>
+    <li><a href="#/settings">settings</a></li>
+  </div>
 
   <div class="main-content">
     <app-content></app-content>

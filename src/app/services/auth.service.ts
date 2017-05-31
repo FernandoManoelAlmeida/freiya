@@ -9,11 +9,12 @@ export class AuthGuard implements CanActivate {
     constructor(public afAuth: AngularFireAuth, private router: Router) {}
 
     canActivate(): any {
-        this.afAuth.auth.signOut();
         var self = this;
+        // this.afAuth.auth.signOut();
 
-        firebase.auth().onAuthStateChanged(function(user, router) {
+        firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                console.info(user.uid);
                 self.router.navigate([ '/dashboard' ]);
             } else {
                 self.router.navigate([ '/login' ]);

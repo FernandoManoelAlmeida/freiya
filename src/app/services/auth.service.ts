@@ -10,14 +10,16 @@ export class AuthGuard implements CanActivate {
 
     canActivate(): any {
         var self = this;
-        // this.afAuth.auth.signOut();
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                console.info(user.uid);
-                self.router.navigate([ '/dashboard' ]);
+                if (self.router.url == '/login') {
+                    self.router.navigate([ '/dashboard' ]);
+                }
             } else {
-                self.router.navigate([ '/login' ]);
+                if (self.router.url !== '/login') {
+                    self.router.navigate([ '/login' ]);
+                }
             }
         });
     }

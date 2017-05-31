@@ -38,4 +38,4 @@ import { APP_ROUTES } from '../routes/app.routes';
     providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }, AuthGuard ],
     bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

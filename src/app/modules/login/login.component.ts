@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
@@ -11,15 +12,24 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 export class LoginComponent {
 
-    constructor(public afAuth: AngularFireAuth, private router: Router) {}
+    user: Observable<firebase.User>;
+
+    constructor(public afAuth: AngularFireAuth, private router: Router) {
+        this.user = afAuth.authState;
+    }
 
     login() {
         this.afAuth.auth.signInAnonymously();
-        this.router.navigate([ '/dashboard' ]);
+        if (this.router.url == '/login') {
+            this.router.navigate([ '/dashboard' ]);
+        }
+
+        return;
     }
     
     logout() {
         this.afAuth.auth.signOut();
-        this.router.navigate([ '/login' ]);
+        this.router.navigate([ 'login' ]);
+        return;
     }
 }

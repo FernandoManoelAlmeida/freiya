@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from '../modules/app.component';
 
 const ROUTES: Routes = [
-    { path: '',      redirectTo: 'login', pathMatch: 'full' },
+    { path: '',      redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'login',         loadChildren: 'app/modules/login/login.module#LoginModule' },
     { path: 'dashboard',     loadChildren: 'app/modules/dashboard/dashboard.module#DashboardModule' },
     { path: 'fromscratch',   loadChildren: 'app/modules/fromscratch/fromscratch.module#FromscratchModule' },

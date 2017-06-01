@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -14,22 +14,19 @@ export class LoginComponent {
 
     user: Observable<firebase.User>;
 
-    constructor(public afAuth: AngularFireAuth, private router: Router) {
-        this.user = afAuth.authState;
+    constructor(public auth: AuthService, private router: Router) {
+        this.user = auth.currentUserObservable;
     }
 
     login() {
-        this.afAuth.auth.signInAnonymously();
-        if (this.router.url == '/login') {
-            this.router.navigate([ '/dashboard' ]);
-        }
-
-        return;
+        var self = this;
+        
+        this.auth.anonymousLogin().then(function () {
+            self.router.navigate(['/dashboard']);
+        });
     }
     
     logout() {
-        this.afAuth.auth.signOut();
-        this.router.navigate([ 'login' ]);
-        return;
+        return this.auth.signOut();
     }
 }

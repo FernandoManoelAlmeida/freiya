@@ -1,8 +1,7 @@
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase';
 
 @Component({
@@ -14,13 +13,11 @@ export class AppComponent {
     title = '( ͡° ͜ʖ ͡°)';
     user: Observable<firebase.User>;
 
-    constructor(public afAuth: AngularFireAuth, private router: Router) {
-        this.user = afAuth.authState;
+    constructor(public auth: AuthService) {
+        this.user = auth.currentUserObservable;
     }
 
     logout() {
-        this.afAuth.auth.signOut();
-        this.router.navigate([ 'login' ]);
-        return;
+        return this.auth.signOut();
     }
 }

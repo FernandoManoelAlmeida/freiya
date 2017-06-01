@@ -9,7 +9,7 @@ const ROUTES: Routes = [
     { path: 'dashboard',     loadChildren: 'app/modules/dashboard/dashboard.module#DashboardModule' },
     { path: 'fromscratch',   loadChildren: 'app/modules/fromscratch/fromscratch.module#FromscratchModule' },
     { path: 'settings',      loadChildren: 'app/modules/settings/settings.module#SettingsModule' },
-    { path: '**',    redirectTo: 'login', pathMatch: 'full' } // NotFoundComponent
+    { path: '**',    redirectTo: 'dashboard', pathMatch: 'full' } // NotFoundComponent
 ];
 
 export const APP_ROUTES: ModuleWithProviders = RouterModule.forRoot(ROUTES);

@@ -16,6 +16,7 @@ export class LoginComponent {
 
     constructor(public auth: AuthService, private router: Router) {
         this.user = auth.currentUserObservable;
+        if (auth.authenticated) router.navigate(['/dashboard']);
     }
 
     login() {

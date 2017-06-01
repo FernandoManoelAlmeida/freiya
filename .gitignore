@@ -43,4 +43,4 @@ Thumbs.db
 
 
 # CUSTOM
-src/app/config*.ts
+/src/app/config/*.ts

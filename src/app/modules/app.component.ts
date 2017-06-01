@@ -10,7 +10,7 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = '( ͡° ͜ʖ ͡°), Angular 4, Typescript & Firebase.';
+    title = '( ͡° ͜ʖ ͡°), Angular 4 & Firebase.';
     user: Observable<firebase.User>;
 
     constructor(public auth: AuthService) {

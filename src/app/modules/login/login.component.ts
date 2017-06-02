@@ -19,10 +19,18 @@ export class LoginComponent {
         if (auth.authenticated) router.navigate(['/dashboard']);
     }
 
-    login() {
+    anonymousLogin() {
         var self = this;
         
         this.auth.anonymousLogin().then(function () {
+            self.router.navigate(['/dashboard']);
+        });
+    }
+
+    googleLogin() {
+        var self = this;
+        
+        this.auth.googleLogin().then(function () {
             self.router.navigate(['/dashboard']);
         });
     }

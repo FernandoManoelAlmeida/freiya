@@ -1,4 +1,5 @@
 <div class="login-content">
-  <button (click)="login()" *ngIf="!(user | async)?.uid">Anonymous Login</button>
+  <button (click)="anonymousLogin()" *ngIf="!(user | async)?.uid">Anonymous Login</button> <br>
+  <button (click)="googleLogin()" *ngIf="!(user | async)?.uid">Google Login</button>
   <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
 </div>

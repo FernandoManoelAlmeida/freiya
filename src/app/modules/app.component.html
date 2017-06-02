@@ -5,9 +5,9 @@
     <h3>
       {{ title }}
     </h3>
-    <li><a [routerLink]="['dashboard/home']">home</a></li>
-    <li><a [routerLink]="['fromscratch']">fromscratch</a></li>
-    <li><a [routerLink]="['settings']">settings</a></li>
+    <li><a [routerLink]="['dashboard/home']" [routerLinkActive]="['active']">home</a></li>
+    <li><a [routerLink]="['fromscratch']" [routerLinkActive]="['active']">don't touch</a></li>
+    <li><a [routerLink]="['settings']" [routerLinkActive]="['active']">settings</a></li>
     <li><a href (click)="logout()" *ngIf="(user | async)?.uid">logout</a></li>
   </div>
 

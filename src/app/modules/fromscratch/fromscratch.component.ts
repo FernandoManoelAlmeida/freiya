@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class FromscratchComponent {
-    name = 'Fernando Manoel de Almeida';
+    title = '( ͡° ͜ʖ ͡°), aperto mizeravi';
 }

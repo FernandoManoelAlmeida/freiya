@@ -1,5 +1,5 @@
 # Freya
-##  https://fernandomanoelalmeida.github.io/freya/
+##  https://freya-4d0f5.firebaseapp.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
@@ -13,16 +13,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
+# Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+# Build to Git
+Run `npm run build:git` to build the project to git gh-pages from this repo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Build prod mode
+Run `npm run build:prod` to build the project in prod mode.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+# Firebase
+To use firebase go check out [Firebase Docs](https://firebase.google.com/docs/hosting/).
+To use it basically run `firebase login`, `firebase init` and `firebase deploy` to hosting.
 
 ## Further help
 

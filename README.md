@@ -13,16 +13,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-# Build
+### Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-# Build to Git
+### Build to Git
 Run `npm run build:git` to build the project to git gh-pages from this repo.
 
-# Build prod mode
+### Build prod mode
 Run `npm run build:prod` to build the project in prod mode.
 
-# Firebase
+### Firebase
 To use firebase go check out [Firebase Docs](https://firebase.google.com/docs/hosting/).
 To use it basically run `firebase login`, `firebase init` and `firebase deploy` to hosting.
 
